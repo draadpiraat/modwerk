@@ -4,7 +4,7 @@ Module version 0.1.0-experimental, Digitakt I OS 1.54 (stock file SHA-256 `f78ba
 
 ## Evidence tier
 
-Emulator only. **No hardware results yet.** Audio output, timing on the unit, project/pattern behaviour on hardware and combinations on hardware are not tested.
+Emulator and author hardware. The author (draadpiraat) flashed both exact builds of section 2 on their own Digitakt I, OS 1.54, on 2026-10-19, about 5 minutes each, and reported the results in section 4. Project save/load, pattern changes and sampling from the inputs are not tested.
 
 ## How the sends work (OS 1.54)
 
@@ -43,6 +43,22 @@ The SETTINGS row drew unticked and ticked in the stock checkbox style. No halt.
 - Memory: 300 bytes of code, 12 bytes of BSS in DDR; no fast SRAM.
 - Load: not measured. The module runs two short handlers per mixer channel (20 calls per audio block).
 
+## 4. Hardware (author's Digitakt I, OS 1.54, 2026-10-19)
+
+Build: Core 2.1 + this module, `.syx` SHA-256 `e0f55015…4b89` (the build of section 2), sent with Elektron Transfer. Source into IN L and IN R. Results as reported by the author:
+
+| Step | Check | Result |
+| --- | --- | --- |
+| 1 | INPUT SENDS PRE appears in SETTINGS, below SYSTEM, unticked | Yes |
+| 2 | Unticked, input DEL/REV up, LEV 0: dry and effect both silent (stock) | Yes |
+| 3 | Ticked, LEV 0: effect only, no dry signal | Yes |
+| 4 | Ticked, raising LEV: dry returns, effect level unchanged | Yes |
+| 5 | Unticked again: stock behaviour; no click when switching | Yes, no clicks |
+| 6 | Tracks with DEL/REV unchanged, ticked and unticked | Yes |
+| 7 | After a power cycle the row is unticked | Yes |
+
+With Digi Health and Digi EQ on hardware: build `.syx` SHA-256 `3e8e6422…07d3` (section 2). Checks: FAST AUDIO ticked and INPUT SENDS PRE the last row; steps 2-6 again; a Master EQ band change audible; optionally steps 2-3 with FAST AUDIO unticked. The author's report: "tested everything, it checks out correctly"; individual step answers were not itemized for this build.
+
 ## Stock flows compared
 
 | Flow | Result |
@@ -50,13 +66,10 @@ The SETTINGS row drew unticked and ticked in the stock checkbox style. No halt.
 | SETTINGS menu: stock rows and order | Unchanged in the emulator; the new row is added at the end |
 | Mixer with the row unticked | Bit-identical to stock (section 1) |
 | Tracks 1-8 sends and dry gains | Unchanged in both modes (section 1) |
-| Project save/load, pattern change, sampling from the inputs, power cycle | Not tested |
+| Power cycle | Row unticked again on hardware (section 4) |
+| Project save/load, pattern change, sampling from the inputs | Not tested |
 
-## Still to test on a unit
+## Still to test
 
-1. Flash the exact build. Feed a signal to IN L/IN R, set DEL or REV up, LEV to 0: unticked silent, ticked effect only.
-2. Raise LEV with the row ticked: dry blends in, effect level unchanged.
-3. Untick: stock behaviour; compare with the stock OS by ear at a few LEV settings.
-4. Tracks 1-8 with DEL/REV: unchanged ticked and unticked.
-5. Power cycle: the row is unticked again.
-6. A combined build with Digi Health (FAST AUDIO on) and Digi EQ: the same checks.
+- Project save/load and pattern changes with the row ticked.
+- Sampling from the inputs with the row ticked.

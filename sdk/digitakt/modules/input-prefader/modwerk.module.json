@@ -86,16 +86,32 @@
     }
   },
   "evidence": {
-    "tier": "none",
+    "tier": "author-hardware",
     "moduleVersion": "0.1.0-experimental",
-    "sourceSha256": null,
-    "reports": [],
-    "hardware": null,
+    "sourceSha256": "52cda84a0158a4b01af9db0b62a2c5a16e3546c70854176455a265074c642a31",
+    "reports": [
+      "evidence/hardware-testing.json",
+      "evidence/source-identity.json",
+      "TESTING.md"
+    ],
+    "hardware": {
+      "model": "Digitakt I",
+      "release": "1.54",
+      "testedOn": "2026-10-19",
+      "tester": "draadpiraat",
+      "durationMinutes": 10,
+      "summary": "draadpiraat flashed the module-alone build and a build with Digi Health and Digi EQ on their Digitakt I, OS 1.54, about 5 minutes each: the row appears, at LEV 0 the inputs are silent unticked and fully wet ticked, LEV changes only the dry signal when ticked, no clicks when switching, tracks unchanged, unticked after a power cycle; the combined build “checks out correctly”.",
+      "limitations": [
+        "Project save/load, pattern changes and sampling from the inputs not tested.",
+        "The combined build’s steps were reported together, not one by one.",
+        "Firmware was not read back from the device."
+      ]
+    },
     "verifiedBy": null
   },
   "tests": {
     "report": "TESTING.md",
-    "summary": "Emulator only (pinned digiemu, OS 1.54): both mixer sites match stock exactly when unticked over 20,000 random register states; in the running firmware, at LEV 0 the inputs send nothing unticked and full sends ticked, alone and with Digi Health (FAST AUDIO) and Digi EQ. Audio, timing and hardware are not tested.",
+    "summary": "Author hardware (Digitakt I, OS 1.54, module alone and with Digi Health and Digi EQ) and emulator: unticked is stock, ticked sends the inputs to the delay and reverb regardless of LEV, no clicks, tracks unchanged. Project save/load and sampling not tested.",
     "documentation": {
       "tutorial": {
         "title": "Quick tutorial: a 100% wet input",

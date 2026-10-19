@@ -1,0 +1,271 @@
+{
+ "elemod": 2,
+ "id": "input-prefader",
+ "version": "0.1.0-experimental",
+ "title": "Input Pre-Fader Sends",
+ "description": "Takes the external inputs’ delay and reverb sends before their LEV, so the inputs can go fully wet to the FX.",
+ "category": "system",
+ "author": "draadpiraat",
+ "license": "GPL-3.0-or-later",
+ "target": {
+  "device": "digitakt-mk1",
+  "product": "Digitakt mk1",
+  "os": "1.54",
+  "syx_sha256": "f78ba80fa7b1da5fb0e1ff61ad61e9e71aafe79f4364fc49679f3651353e3cf6",
+  "section3_sha256": "5c58bf9e3949ef09977c5fc007a61e8d026931f67f1621238379dfb8ee4d31a2",
+  "section3_len": 2479680
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 300,
+   "parts": [
+    [
+     "hex",
+     "23c00000000023c100000000ac000900ac81090054974e754a390000000067140c82000000086d0c203900000000223900000000a0400900a0c10900a1c9a3c8ac000900ac810900a1c6a3c15097509754974e75487a00b62f2f00084eb900000000508f4e754e56fffc2f02486effff487a00aa24082f084eb94017af204fef000c2002242efff84e5e4e752f02206f000824104a3900000000660a700113c0000000006006423900000000204241e80038241f2f4800044ef9400c9a3a202f000c670e2f02206f000824104a806acc60d44e7570004a39000000006702701cd0b9421f8a3c222f000c2f4100042f400008222f00102f41000c222f00142f41001042af00144ef9400c2b8800000000000000000000000000000000494e5055542053454e44532050524500"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 12
+  }
+ },
+ "symbols": {
+  "STR_CTOR": [
+   "abs",
+   1075293984
+  ],
+  "INVALIDATE": [
+   "abs",
+   1074567738
+  ],
+  "BLIT": [
+   "abs",
+   1074539400
+  ],
+  "CHECKBOXES": [
+   "abs",
+   1109363260
+  ],
+  "ipf_pan_l": [
+   ".bss",
+   0
+  ],
+  "ipf_pan_r": [
+   ".bss",
+   4
+  ],
+  "ipf_pre": [
+   ".bss",
+   8
+  ],
+  "ipf_row": [
+   ".run",
+   268
+  ],
+  "ipf_label": [
+   ".run",
+   102
+  ],
+  "ipf_name": [
+   ".run",
+   284
+  ],
+  "ipf_select": [
+   ".run",
+   140
+  ],
+  "ipf_change": [
+   ".run",
+   190
+  ],
+  "ipf_draw": [
+   ".run",
+   212
+  ],
+  "ipf_dry": [
+   ".run",
+   0
+  ],
+  "ipf_settings": [
+   ".run",
+   84
+  ],
+  "ipf_sends": [
+   ".run",
+   24
+  ]
+ },
+ "exports": [
+  "ipf_dry",
+  "ipf_sends",
+  "ipf_settings"
+ ],
+ "imports": [
+  "core_additem"
+ ],
+ "weak": [],
+ "relocs": [
+  [
+   ".run",
+   2,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   8,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   26,
+   "abs32",
+   "sec:.bss",
+   8
+  ],
+  [
+   ".run",
+   42,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   48,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   94,
+   "abs32",
+   "sym:core_additem",
+   0
+  ],
+  [
+   ".run",
+   150,
+   "abs32",
+   "sec:.bss",
+   8
+  ],
+  [
+   ".run",
+   160,
+   "abs32",
+   "sec:.bss",
+   8
+  ],
+  [
+   ".run",
+   168,
+   "abs32",
+   "sec:.bss",
+   8
+  ],
+  [
+   ".run",
+   216,
+   "abs32",
+   "sec:.bss",
+   8
+  ],
+  [
+   ".run",
+   268,
+   "abs32",
+   "sec:.run",
+   102
+  ],
+  [
+   ".run",
+   272,
+   "abs32",
+   "sec:.run",
+   140
+  ],
+  [
+   ".run",
+   276,
+   "abs32",
+   "sec:.run",
+   212
+  ],
+  [
+   ".run",
+   280,
+   "abs32",
+   "sec:.run",
+   190
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x40071e36",
+   "len": 8,
+   "stock_sha256": "f03f032ea1b97923f619d75171278004a4d6edb04c2128e19de8dc9c1c859471",
+   "new": "4eb9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:ipf_dry",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40071eb4",
+   "len": 24,
+   "stock_sha256": "4729e5aa4195651cbe38e64435f22f20584f21eaa0fec6513c0335d17a6f0868",
+   "new": "4eb9000000004e714e714e714e714e714e714e714e714e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:ipf_sends",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [
+  {
+   "to": "ev_settings",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:ipf_settings",
+     0
+    ]
+   ],
+   "claims": []
+  }
+ ],
+ "copied": [],
+ "resources": {
+  "regions": [],
+  "names": [
+   "settings:INPUT SENDS PRE"
+  ],
+  "core": "2.1"
+ },
+ "requires": [
+  "core"
+ ],
+ "conflicts": [],
+ "signature": null
+}

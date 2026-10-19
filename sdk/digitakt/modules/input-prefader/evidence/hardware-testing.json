@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "reportedOn": "2026-10-19",
+  "source": "Direct author statements in the development conversation",
+  "reporter": "draadpiraat",
+  "status": "hardware-tested-author-reported",
+  "model": "Digitakt I",
+  "release": "1.54",
+  "builds": [
+    {
+      "name": "Core 2.1 + input-prefader 0.1.0-experimental",
+      "syxSha256": "e0f55015fffff75361d1912f1b61231b93b3fd33ab910620608cbb1da6ec4b89",
+      "durationMinutes": 5,
+      "statement": "2 yes, 3 yes, 4 yes, 5 yes no clicks, 6 yes, 7 yes (step 1: the row shows up in settings)",
+      "steps": {
+        "1 row in SETTINGS": "yes",
+        "2 unticked, LEV 0: dry and effect silent": "yes",
+        "3 ticked, LEV 0: effect only": "yes",
+        "4 ticked, raise LEV: dry returns, effect unchanged": "yes",
+        "5 untick: stock, no clicks": "yes",
+        "6 tracks unchanged": "yes",
+        "7 power cycle: row unticked": "yes"
+      }
+    },
+    {
+      "name": "Core 2.1 + digihealth 1.0 + digieq 1.0.2-experimental + input-prefader 0.1.0-experimental",
+      "syxSha256": "3e8e6422a3118702789b3976f95cf59c142b42beb612a3e73285e7a825e107d3",
+      "durationMinutes": 5,
+      "statement": "tested everything, it checks out correctly",
+      "steps": "not itemized"
+    }
+  ],
+  "packageSha256": "a30dc2557908f7b22f48f774dc0721eaf9d3dbf2ca546da5a69cf86f1f28f54f",
+  "limitations": [
+    "Project save/load, pattern changes and sampling from the inputs were not tested.",
+    "Firmware was not read back from the device; the builds are identified by their SysEx hashes.",
+    "The combined build's steps were reported together, not one by one."
+  ]
+}
