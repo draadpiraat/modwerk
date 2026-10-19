@@ -111,7 +111,7 @@ class ResidentDriver(unittest.TestCase):
             work = Path(tmp)
             fixture = work / 'fixture.c'
             metadata = '\n'.join(line for line in driver.controller_c(dict(receipt=receipt)).splitlines() if not line.startswith('extern '))
-            fixture.write_text('#include <stdint.h>\n' + '\n'.join(arrays) + metadata)
+            fixture.write_text('#include <stdint.h>\n' + '\n'.join(arrays) + metadata + '\n')
             executable = work / 'driver'
             subprocess.run(['cc', '-std=c11', '-Wall', '-Wextra', '-Werror', '-pedantic', '-I' + str(ELEK),
                             '-I' + str(RUNTIME), str(fixture), str(RUNTIME / 'stock_hooks.c'), str(RUNTIME / 'stock_hook_driver.c'),
