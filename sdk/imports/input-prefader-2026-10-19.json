@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "module": "digitakt/input-prefader",
+  "version": "0.1.0-experimental",
+  "date": "2026-10-19",
+  "upstream": {
+    "repository": "https://github.com/draadpiraat/modwerk",
+    "revision": "56dcead65f658a063d59ad53a44223b6dc20785a",
+    "path": "sdk/digitakt/modules/input-prefader",
+    "license": "GPL-3.0-or-later"
+  },
+  "changes": [
+    "First Modwerk release for Digitakt I OS 1.54, on Core 2.1. SETTINGS > INPUT SENDS PRE takes IN L and IN R’s delay and reverb sends before their External Mixer LEV, so an input at LEV 0 goes fully wet to the effects.",
+    "Source-only export compiled in the pinned GCC 16.2 Docker toolchain; byte-identical to the package built with the author’s local GCC 16.2 and flashed for the hardware tests."
+  ],
+  "runtimeSourceSha256": "52cda84a0158a4b01af9db0b62a2c5a16e3546c70854176455a265074c642a31",
+  "packages": [
+    {
+      "os": "1.54",
+      "path": "sdk/imports/packages/input-prefader/input-prefader-0.1.0-experimental-os1.54.elemod",
+      "sha256": "a30dc2557908f7b22f48f774dc0721eaf9d3dbf2ca546da5a69cf86f1f28f54f"
+    }
+  ],
+  "stockPolicy": "No firmware or stock-derived code/tables are present. Addresses, lengths and SHA-256 guards are metadata; exported instructions and sections are authored module code. Local materialized recipes and firmware are never committed.",
+  "evidence": "sdk/digitakt/modules/input-prefader/evidence/hardware-testing.json",
+  "requires": []
+}
