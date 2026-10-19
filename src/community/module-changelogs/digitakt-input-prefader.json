@@ -1,0 +1,10 @@
+[
+  {
+    "version": "0.1.0-experimental",
+    "date": "2026-10-19",
+    "changes": [
+      "First release for Digitakt I OS 1.54, on Core 2.1. SETTINGS > INPUT SENDS PRE takes IN L and IN R’s delay and reverb sends before their External Mixer LEV (after PAN), so an input at LEV 0 goes fully wet to the effects. Unticked, the mixer runs the stock instructions; tracks and DUAL MONO are unchanged.",
+      "The setting is not saved and starts unticked at every power-on. Hardware audio, timing and combination behaviour are not yet verified on a unit; see TESTING.md."
+    ]
+  }
+]

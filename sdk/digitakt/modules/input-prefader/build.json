@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    "src/prefader.s"
+  ],
+  "defsym": {},
+  "cflags": [],
+  "weak": [],
+  "subscribe": [
+    {
+      "event": "ev_settings",
+      "fn": "ipf_settings",
+      "order": 50
+    }
+  ],
+  "contribute": [],
+  "collections": {},
+  "copied": [],
+  "regions": [],
+  "claims": [
+    "settings:INPUT SENDS PRE"
+  ],
+  "requires": [],
+  "derive": null,
+  "releases": {
+    "1.54": {
+      "defsym": {},
+      "cflags": [],
+      "sites": [
+        {
+          "addr": "0x40071e36",
+          "len": 8,
+          "stockSha256": "f03f032ea1b97923f619d75171278004a4d6edb04c2128e19de8dc9c1c859471",
+          "op": "jsr",
+          "target": "ipf_dry"
+        },
+        {
+          "addr": "0x40071eb4",
+          "len": 24,
+          "stockSha256": "4729e5aa4195651cbe38e64435f22f20584f21eaa0fec6513c0335d17a6f0868",
+          "op": "jsr",
+          "target": "ipf_sends"
+        }
+      ]
+    }
+  }
+}

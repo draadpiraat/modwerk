@@ -1,0 +1,62 @@
+# Input Pre-Fader Sends testing
+
+Module version 0.1.0-experimental, Digitakt I OS 1.54 (stock file SHA-256 `f78ba80f…3cf6`), Core 2.1. Firmware, linked images and emulator state stay on the developer's computer; none of it is committed.
+
+## Evidence tier
+
+Emulator only. **No hardware results yet.** Audio output, timing on the unit, project/pattern behaviour on hardware and combinations on hardware are not tested.
+
+## How the sends work (OS 1.54)
+
+The render's mixer (0x40071c20) loops over ten channels: tracks 1-8, then IN L and IN R. For each one it builds two pan gains, multiplies them by the LEV gain (0x40071e36) and derives the delay and reverb sends from those post-LEV gains (0x40071eb4). The module saves the pan gains at the first site and, for channels 8 and 9 with the row ticked, uses them at the second. Both handlers replay the instructions they replace; their assembled encodings are identical to the stock ones.
+
+## 1. Site equivalence (patched Unicorn from pinned digiemu)
+
+Each site run in the stock image and in the linked image (Core 2.1 + this module) from identical random register states, MACSR 0xA0 as the audio engine uses, 20,000 cases, comparing all 16 registers, both accumulators and the stack:
+
+| Check | Result |
+| --- | --- |
+| 0x40071e36, row unticked and ticked: identical to stock, pan gains kept | 0 differences |
+| 0x40071eb4, row unticked: identical to stock | 0 differences |
+| 0x40071eb4, row ticked, tracks 1-8: identical to stock | 0 differences |
+| 0x40071eb4, row ticked, IN L/IN R: equal to stock's send arithmetic on the pre-LEV pan gains | 0 differences (d0 is excluded: stock overwrites it in the next instruction) |
+
+## 2. Running firmware (pinned digiemu c1b5735, firmware-native drawing)
+
+Build: Core 2.1 + this module, `.syx` SHA-256 `e0f55015…4b89`. After boot, the External Mixer block at 0x800018a8 was set by memory write (IN L/R LEV 0, DEL and REV 127; PAN centre, DUAL on as booted). The row was then ticked and unticked with real panel keys (SETTINGS, 9 × DOWN, RIGHT; later LEFT). A code hook read the dry gains and the four sends where the mixer computes them, 600 calls per channel per phase:
+
+| Phase | IN L/IN R dry gain | DEL L/R, REV L/R sends |
+| --- | --- | --- |
+| Unticked, LEV 0 | 0 | 0 (stock post-fader) |
+| Ticked (RIGHT), LEV 0 | 0 | nonzero, -1585545216 each |
+| Ticked, LEV 127 | -1610612736 | -1585545216 each |
+| Unticked (LEFT), LEV 127 | -1610612736 | -1585545216 each |
+
+The SETTINGS row drew unticked and ticked in the stock checkbox style. No halt.
+
+**With Digi Health and Digi EQ:** build Core 2.1 + Digi Health 1.0 + Digi EQ 1.0.2-experimental + this module, `.syx` SHA-256 `3e8e6422…07d3`, same steps with 11 × DOWN (Digi Health's two rows come first). FAST AUDIO was running: every mixer call came from its SRAM copy, none from the image. The four phases gave the same values as the table above. No halt.
+
+## 3. Build and rules
+
+- `npm run modules:check`: passes (no overlap with any Modwerk Digitakt module's bytes).
+- The vendored elekloader kit's `link()` and Modwerk's `linkMods` produce the identical MAIN image, alone and with Digi Health + Digi EQ.
+- Memory: 300 bytes of code, 12 bytes of BSS in DDR; no fast SRAM.
+- Load: not measured. The module runs two short handlers per mixer channel (20 calls per audio block).
+
+## Stock flows compared
+
+| Flow | Result |
+| --- | --- |
+| SETTINGS menu: stock rows and order | Unchanged in the emulator; the new row is added at the end |
+| Mixer with the row unticked | Bit-identical to stock (section 1) |
+| Tracks 1-8 sends and dry gains | Unchanged in both modes (section 1) |
+| Project save/load, pattern change, sampling from the inputs, power cycle | Not tested |
+
+## Still to test on a unit
+
+1. Flash the exact build. Feed a signal to IN L/IN R, set DEL or REV up, LEV to 0: unticked silent, ticked effect only.
+2. Raise LEV with the row ticked: dry blends in, effect level unchanged.
+3. Untick: stock behaviour; compare with the stock OS by ear at a few LEV settings.
+4. Tracks 1-8 with DEL/REV: unchanged ticked and unticked.
+5. Power cycle: the row is unticked again.
+6. A combined build with Digi Health (FAST AUDIO on) and Digi EQ: the same checks.
