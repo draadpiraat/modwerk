@@ -1,5 +1,14 @@
 # Verification record
 
+## Input Pre-Fader Sends 0.1.0-experimental — 20 October 2026
+
+New Digitakt I module by draadpiraat for OS 1.54 on Core 2.1: SETTINGS > INPUT SENDS PRE takes IN L and IN R's delay and reverb sends before their External Mixer LEV. The source-only package from commit `56dcead65f658a063d59ad53a44223b6dc20785a` (`input-prefader-0.1.0-experimental-os1.54.elemod`, sha256 `a30dc255…f28f54f`) is pinned through `npm run elekloader:update -- --overlay sdk/imports/elekloader-input-prefader-2026-10-19.json`; kit 0.6.0 is unchanged and the catalogue now holds 40 mods.
+- **Package:** built in the pinned Docker toolchain (`build-elemod-isolated.sh`), byte for byte the package built with GCC 16.2 on the author's Mac and flashed for the hardware tests.
+- **Links:** the vendored kit's `link()` and `linkMods` give the same MAIN image alone and with Digi Health and Digi EQ; `modules:check` finds no overlap with any Digitakt module.
+- **Emulator (pinned digiemu `c1b5735`):** both mixer sites equal stock in every register over 20,000 random states when unticked; in running firmware the inputs' sends are 0 at LEV 0 unticked and full ticked, also from Digi Health's FAST AUDIO SRAM copy. Load +392 mean, +469 worst cycles of 166,666 per block (about 0.2% and 0.3%).
+- **Hardware:** the author reports both builds working on their Digitakt I, OS 1.54, about 5 minutes each (2026-10-19); project save/load and sampling from the inputs not tested. Details: [TESTING.md](../sdk/digitakt/modules/input-prefader/TESTING.md).
+- **Checks:** `npm run pr:ready` Ready on macOS (one unrelated test fixture needed Apple clang's `-Wnewline-eof` silenced; fixed separately in #716). Firmware, linked images and emulator state stayed local.
+
 ## elekloader kit 0.6.0 — 19 October 2026
 
 The vendored kit moved from 0.5.0 (`3acac10`) to 0.6.0 (`7b5b5b8`), elekloader's [kit-v0.6.0](https://github.com/irpina/elekloader/releases/tag/kit-v0.6.0) pre-release, with `npm run elekloader:update -- elekloader-kit-0.6.0.zip --sha256 <the release's>`. The catalog is unchanged (`a46e75f`; upstream `0da420d`).

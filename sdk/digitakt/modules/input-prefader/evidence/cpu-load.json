@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "tool": "CycleClock session script in pinned digiemu c1b5735 (private, not committed)",
+  "method": "emu.cftiming.CycleClock, 250 MHz, zero-wait memory; vector-191 handler entry (0x40077420) to its rte (0x400784d0), nested interrupts included",
+  "periodCycles": 166666,
+  "core": "2.1",
+  "release": "1.54",
+  "conditions": "Disposable first-boot project, transport stopped, IN L/R LEV 0 and DEL/REV 127 set in the External Mixer block; the module's handlers run on all ten mixer channels every block whatever the pattern, so its added cost does not depend on the workload. Not a hardware measurement.",
+  "stock": {
+    "blocks": 3000,
+    "mean_cycles": 100448,
+    "p99_cycles": 100766,
+    "max_cycles": 101241,
+    "mean_fraction": 0.6027,
+    "max_fraction": 0.6074,
+    "stock_syx_sha256": "f78ba80fa7b1da5fb0e1ff61ad61e9e71aafe79f4364fc49679f3651353e3cf6"
+  },
+  "module": {
+    "build_sha256": "e0f55015fffff75361d1912f1b61231b93b3fd33ab910620608cbb1da6ec4b89",
+    "ticked": {
+      "blocks": 3000,
+      "mean_cycles": 100840,
+      "p99_cycles": 101147,
+      "max_cycles": 101710,
+      "mean_fraction": 0.605,
+      "max_fraction": 0.6103
+    },
+    "unticked": {
+      "blocks": 3000,
+      "mean_cycles": 100771,
+      "p99_cycles": 101103,
+      "max_cycles": 101564,
+      "mean_fraction": 0.6046,
+      "max_fraction": 0.6094
+    }
+  },
+  "addedMeanCycles": {
+    "ticked": 392,
+    "unticked": 323
+  },
+  "addedWorstCycles": {
+    "ticked": 469,
+    "unticked": 323
+  }
+}

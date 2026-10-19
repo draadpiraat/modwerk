@@ -41,7 +41,7 @@ The SETTINGS row drew unticked and ticked in the stock checkbox style. No halt.
 - `npm run modules:check`: passes (no overlap with any Modwerk Digitakt module's bytes).
 - The vendored elekloader kit's `link()` and Modwerk's `linkMods` produce the identical MAIN image, alone and with Digi Health + Digi EQ.
 - Memory: 300 bytes of code, 12 bytes of BSS in DDR; no fast SRAM.
-- Load: not measured. The module runs two short handlers per mixer channel (20 calls per audio block).
+- Load (emulator, [cpu-load.json](evidence/cpu-load.json)): CycleClock at 250 MHz, zero-wait memory, the audio interrupt from entry to `rte` over 3,000 blocks of 166,666 cycles. Stock 100,448 mean / 101,241 worst; ticked 100,840 / 101,710 (+392 / +469); unticked 100,771 / 101,564 (+323 / +323). About 0.2% average, 0.3% worst case of a block. Not a hardware measurement.
 
 ## 4. Hardware (author's Digitakt I, OS 1.54, 2026-10-19)
 

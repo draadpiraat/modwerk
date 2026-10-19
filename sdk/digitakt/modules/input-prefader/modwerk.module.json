@@ -80,9 +80,9 @@
     "memoryBytes": 312,
     "fastBytes": 0,
     "load": {
-      "display": "Not measured yet",
-      "method": "unmeasured",
-      "conditions": "Two short handlers run once per mixer channel (20 calls per audio block); measure with every track playing and the row ticked."
+      "display": "Adds 0.2% average, 0.3% worst-case of an audio block over stock (emulator)",
+      "method": "emulator",
+      "conditions": "Emulator: OS 1.54 on Core 2.1, 3,000 audio blocks timed with the MCF5441x instruction-timing model at 250 MHz, zero-wait memory, row ticked. Stock: 60.3% average, 60.7% worst block; with the module 60.5% and 61.0% (unticked 60.5% and 60.9%). The handlers run on all ten mixer channels every block, so the cost does not depend on the pattern. Not a hardware measurement."
     }
   },
   "evidence": {
@@ -92,6 +92,7 @@
     "reports": [
       "evidence/hardware-testing.json",
       "evidence/source-identity.json",
+      "evidence/cpu-load.json",
       "TESTING.md"
     ],
     "hardware": {
