@@ -108,10 +108,9 @@
       "release": "1.54",
       "testedOn": "2026-10-29",
       "tester": "draadpiraat",
-      "durationMinutes": null,
+      "durationMinutes": 20,
       "summary": "draadpiraat tested CC Remap on their Digitakt I, OS 1.54, with an Allen & Heath Xone:1D: AMP toggles CC Receive (2/2) and back; untouched, CC 70–77 work as stock; with the table set to the Xone’s pots each pot moves its VAL slot and the synth receives the slot’s CC SELECT number; the table holds across pattern changes; two MIDI tracks each follow their own channel and table; the table is back at 70–77 after every power cycle. With FX Track a pot moves the effect; with CC Assignment Names both modules work.",
       "limitations": [
-        "Test time was not reported.",
         "The auto channel, USB MIDI input and a CC flood were not tested.",
         "Copying a MIDI track does not copy its CC Receive table."
       ]

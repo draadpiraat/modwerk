@@ -74,7 +74,7 @@ Builds: module alone `eaa72c8c…c85079`, with FX Track `5196ccac…dd5c74`, wit
 7. With CC Assignment Names: CC Receive still works, and FUNC + hold a knob on CC VALUE still renames.
 8. Power-cycle: CC Receive is back at 70–77.
 
-**Author’s results (draadpiraat, 29 October 2026, Allen & Heath Xone:1D):** 1 works perfect; 2, 3 and 4 confirmed; 5 “different channels work and follow its own channel”; 6 (with FX Track) “fx track seems to work exactly as described”; 7 (with CC Assignment Names) “confirmed everything works”; 8 confirmed each time. Also noticed: copying an entire MIDI track does not copy its CC Receive table. Test time not reported. Details in [evidence/hardware-testing.json](evidence/hardware-testing.json).
+**Author’s results (draadpiraat, 29 October 2026, Allen & Heath Xone:1D):** 1 works perfect; 2, 3 and 4 confirmed; 5 “different channels work and follow its own channel”; 6 (with FX Track) “fx track seems to work exactly as described”; 7 (with CC Assignment Names) “confirmed everything works”; 8 confirmed each time. Also noticed: copying an entire MIDI track does not copy its CC Receive table. Tested for about 20 minutes. Details in [evidence/hardware-testing.json](evidence/hardware-testing.json).
 
 ## Stock flows compared
 

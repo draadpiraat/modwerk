@@ -42,9 +42,12 @@
   "packageSha256": "81d9fd8d105214ee0bb1daf95da8fb004900ae0b109be07ca2c26a459f2f81f1",
   "limitations": [
     "Which build was used for steps 1-5 and 8 was not stated; the steps were asked for the module-alone build.",
-    "Test time was not reported.",
     "The auto channel, USB MIDI input and a CC flood were not tested.",
     "Firmware was not read back from the device; the builds are identified by their SysEx hashes."
   ],
-  "packageParity": "The isolated Docker build (toolchain image sha256:f5c85e78…4854) of this source, packaged with scripts/package-elemod-recipe.mjs and linked with Core 2.1, gives the SysEx of the three tested builds byte for byte (eaa72c8c…c85079 alone, 5196ccac…dd5c74 with FX Track, 024ff31b…66edcc with dt-support and CC Assignment Names)."
+  "packageParity": "The isolated Docker build (toolchain image sha256:f5c85e78…4854) of this source, packaged with scripts/package-elemod-recipe.mjs and linked with Core 2.1, gives the SysEx of the three tested builds byte for byte (eaa72c8c…c85079 alone, 5196ccac…dd5c74 with FX Track, 024ff31b…66edcc with dt-support and CC Assignment Names).",
+  "usage": {
+    "statement": "tested for about 20 minutes",
+    "durationMinutes": 20
+  }
 }
