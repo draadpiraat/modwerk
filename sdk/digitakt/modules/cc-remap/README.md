@@ -54,7 +54,7 @@ MIDI track > AMP page > press AMP again
 Requires Core 2.1. Built for OS 1.54 only.
 
 - **Not saved.** The tables start at 70–77 (stock) at every power-on; projects and patterns store nothing for them.
-- **One table per MIDI track, for all patterns.** It does not change with the pattern, unlike CC SELECT.
+- **One table per MIDI track, for all patterns.** It does not change with the pattern, unlike CC SELECT, and copying a MIDI track does not copy it.
 - **The track’s own channel only.** A CC on the auto channel reaches the active track as stock, without the table.
 - **Consumed numbers.** A CC whose number is in a track’s table no longer reaches that track as itself; MIDI THRU and other tracks are unaffected.
 - **Two slots with the same number.** The first slot wins.
@@ -64,7 +64,7 @@ Requires Core 2.1. Built for OS 1.54 only.
 
 ## Tests and measurements
 
-See [TESTING.md](TESTING.md) for the exact evidence and the checks still open. The emulator results cover the layer, the table and the message path; they do not prove timing on the unit or behaviour beside every other module on hardware.
+See [TESTING.md](TESTING.md) for the exact evidence and the checks still open. The author tested it on a Digitakt I with an Allen & Heath Xone:1D, alone, with FX Track and with CC Assignment Names. The emulator results add the message map and the load figures; nothing here proves behaviour beside every other module on hardware.
 
 ## Authorship and licences
 

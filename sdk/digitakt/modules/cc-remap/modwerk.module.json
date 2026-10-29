@@ -70,6 +70,7 @@
       "Built for OS 1.54 only.",
       "Not saved: the tables are 70–77 (stock) again at every power-on.",
       "One table per MIDI track for all patterns, unlike CC SELECT.",
+      "Copying a MIDI track does not copy its CC Receive table; the table belongs to the track slot.",
       "Only the track’s own TRACK CHANNEL is remapped; a CC on the auto channel is stock.",
       "A CC whose number is in a track’s table no longer reaches that track as itself; two slots with the same number: the first wins.",
       "The value popup while turning still reads CC1 Select=… on CC Receive."
@@ -94,19 +95,32 @@
     }
   },
   "evidence": {
-    "tier": "none",
+    "tier": "author-hardware",
     "moduleVersion": "0.1.0-experimental",
     "sourceSha256": "2a8ffcbb977becf6e5a2cde726f1e82e4b914504343963a5edc1729823db2354",
     "reports": [
+      "evidence/hardware-testing.json",
       "evidence/source-identity.json",
       "TESTING.md"
     ],
-    "hardware": null,
+    "hardware": {
+      "model": "Digitakt I",
+      "release": "1.54",
+      "testedOn": "2026-10-29",
+      "tester": "draadpiraat",
+      "durationMinutes": null,
+      "summary": "draadpiraat tested CC Remap on their Digitakt I, OS 1.54, with an Allen & Heath Xone:1D: AMP toggles CC Receive (2/2) and back; untouched, CC 70–77 work as stock; with the table set to the Xone’s pots each pot moves its VAL slot and the synth receives the slot’s CC SELECT number; the table holds across pattern changes; two MIDI tracks each follow their own channel and table; the table is back at 70–77 after every power cycle. With FX Track a pot moves the effect; with CC Assignment Names both modules work.",
+      "limitations": [
+        "Test time was not reported.",
+        "The auto channel, USB MIDI input and a CC flood were not tested.",
+        "Copying a MIDI track does not copy its CC Receive table."
+      ]
+    },
     "verifiedBy": null
   },
   "tests": {
     "report": "TESTING.md",
-    "summary": "Emulator: on a MIDI track’s AMP page, AMP switches to CC Receive (2/2) and back; knobs A–H edit the table. With VAL1 set to receive CC 7 and VAL2 CC 1, those CCs on track A’s channel set VAL1 and VAL2 and send their CC SELECT numbers out of MIDI OUT; CC 70 still sets VAL1; other channels are unaffected. With FX Track, a remapped CC sets the reverb PRE and nothing leaves MIDI OUT. Next to CC Assignment Names the layer and the name editor both work. Hardware not yet tested.",
+    "summary": "Author hardware (Digitakt I, OS 1.54, Allen & Heath Xone:1D): AMP toggles CC Receive and back; with the table set to the controller’s pots each pot moves its VAL slot and the slot’s CC SELECT number goes out; the table holds across pattern changes; each MIDI track follows its own channel; 70–77 again after a power cycle; works with FX Track and with CC Assignment Names. Emulator: also the message map, other channels untouched and the load figures.",
     "documentation": {
       "tutorial": {
         "title": "Quick tutorial: play a MIDI track’s VAL knobs from a fixed-CC controller",

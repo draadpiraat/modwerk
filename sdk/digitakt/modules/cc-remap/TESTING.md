@@ -4,7 +4,7 @@ Module version 0.1.0-experimental, Digitakt I OS 1.54 (stock file SHA-256 `f78ba
 
 ## Evidence tier
 
-Emulator only so far. Hardware steps for the author are in section 5; no hardware result is recorded yet.
+Author hardware: the three builds of section 5 on the author’s Digitakt I with an Allen & Heath Xone:1D, plus the emulator results below.
 
 ## How it works (OS 1.54)
 
@@ -63,7 +63,7 @@ Seen in passing, stock as well: after an audio track’s page, TRK + a MIDI trac
 
 ## 5. Hardware steps (for the author)
 
-Not yet tested. Builds: module alone `eaa72c8c…c85079`, with FX Track `5196ccac…dd5c74`, with CC Assignment Names `024ff31b…66edcc`.
+Builds: module alone `eaa72c8c…c85079`, with FX Track `5196ccac…dd5c74`, with CC Assignment Names `024ff31b…66edcc`.
 
 1. MIDI track A, AMP page: AMP shows CC Receive (2/2) with SND CTRL1–8 (70–77); AMP again shows CC Select (1/2), unchanged.
 2. Untouched, the Xone (or any controller) on channel 9 sending CC 70–77 moves VAL1–8 as stock.
@@ -74,6 +74,8 @@ Not yet tested. Builds: module alone `eaa72c8c…c85079`, with FX Track `5196cca
 7. With CC Assignment Names: CC Receive still works, and FUNC + hold a knob on CC VALUE still renames.
 8. Power-cycle: CC Receive is back at 70–77.
 
+**Author’s results (draadpiraat, 29 October 2026, Allen & Heath Xone:1D):** 1 works perfect; 2, 3 and 4 confirmed; 5 “different channels work and follow its own channel”; 6 (with FX Track) “fx track seems to work exactly as described”; 7 (with CC Assignment Names) “confirmed everything works”; 8 confirmed each time. Also noticed: copying an entire MIDI track does not copy its CC Receive table. Test time not reported. Details in [evidence/hardware-testing.json](evidence/hardware-testing.json).
+
 ## Stock flows compared
 
 | Flow | Result |
@@ -82,9 +84,9 @@ Not yet tested. Builds: module alone `eaa72c8c…c85079`, with FX Track `5196cca
 | CC SELECT (1/2) | Stock |
 | Other parameter pages, audio tracks | Stock |
 | Saved data | Unchanged; the table is not saved |
-| Power cycle | 70–77 again |
+| Power cycle | 70–77 again (author’s unit, each time) |
+| Copying a MIDI track | Copies the track’s data; the CC Receive table stays with the track slot (author’s unit) |
 
 ## Still to test
 
-- Everything in section 5 on hardware.
 - The auto channel (not remapped by design), USB MIDI input, a CC flood.
