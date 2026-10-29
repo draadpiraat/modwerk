@@ -18,7 +18,7 @@
     {
       "os": "1.54",
       "path": "sdk/imports/packages/cc-remap/cc-remap-0.1.0-experimental-os1.54.elemod",
-      "sha256": "a9a3da595f54a3823bc4416f07741f905cd5944684ed2180a0740ac4d871a307"
+      "sha256": "81d9fd8d105214ee0bb1daf95da8fb004900ae0b109be07ca2c26a459f2f81f1"
     }
   ],
   "stockPolicy": "No firmware or stock-derived code/tables are present. Addresses, lengths and SHA-256 guards are metadata; exported instructions and sections are authored module code. Local materialized recipes and firmware are never committed.",
