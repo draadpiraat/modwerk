@@ -2,7 +2,9 @@ wait 1000
 press TRK
 tap 9
 release TRK
+wait 1500
 tap AMP
+wait 600
 snap cc-select
 tap AMP
 snap cc-receive

@@ -11,7 +11,8 @@
 | The table is edited on a second layer of the MIDI track's AMP page (CC
 | SELECT): pressing AMP on that page steps the stock page view to a second
 | sub-page of the same page, titled CC RECEIVE, whose eight knobs read and
-| write the table instead of SEL1-8. The table is not saved.
+| write the table instead of SEL1-8. store.c keeps the tables in a file on the
+| +Drive, one set for the whole unit, and loads it after power-on.
 
         .equ ALLOC,      0x400d412c     | malloc(size), behind operator new
         .equ FREE,       0x400d4332     | free(p), behind operator delete
@@ -27,6 +28,7 @@
         .equ V_SUB,      144            | view: the sub-page shown
         .equ SEL1,       33             | SEL1-8: local parameter ids 33-40
         .equ VAL1_CC,    70             | the CC stock reads as VAL1
+        .equ SAVE_DELAY, 30             | ticks (about 1 s) from the last edit to the save
 
         .text
 
@@ -120,6 +122,12 @@ ccm_set:
         move.l  %d4, %d0
         asr.l   #8, %d0
         move.b  %d0, (%a1)
+        suba.l  #ccm_rx, %a1
+        adda.l  #ccm_edited, %a1
+        moveq   #1, %d0
+        move.b  %d0, (%a1)              | this slot was set by hand: the load keeps it
+        moveq   #SAVE_DELAY, %d0        | store.c saves the tables once this runs out
+        move.l  %d0, ccm_dirty
         cmp.l   %d0, %d0
         rts
 1:      move.w  %d4, (0,%a0,%d2.l*2)
@@ -187,6 +195,12 @@ ccm_name:
 
         .bss
         .balign 4
+        .globl  ccm_dirty
+ccm_dirty:
+        .skip   4                       | ticks until store.c saves the tables; 0: saved
+        .globl  ccm_edited
+ccm_edited:
+        .skip   64                      | per slot: set by hand since power-on
 ccm_view:
         .skip   4                       | the MIDI AMP page view, once grown
 ccm_alloc:

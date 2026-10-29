@@ -1,19 +1,27 @@
 {
   "schemaVersion": 1,
   "algorithm": "sha256 of canonical sorted JSON {sources,build}; UTF-8, compact separators",
-  "sha256": "2a8ffcbb977becf6e5a2cde726f1e82e4b914504343963a5edc1729823db2354",
+  "sha256": "a4bcf3431b3726bd0894db60703f58e1ac9d4b1bd7f7121a57a7eca6be46f96d",
   "sources": {
-    "src/ccremap.s": "6dff118451f3cb3aaac6ba6256e9526a7b803d688cdb7b6ce588864808c410a3"
+    "src/ccremap.s": "7539f902087c714cd11bfa0139f3a8efcd0a280c90f4c8f557243ae5605af46e",
+    "src/store.c": "aada3b74a38639b3bd0eb533cbb3c9b31f7d95c607b7b48149bb37ee8d39051c"
   },
   "build": {
     "schemaVersion": 1,
     "sources": [
-      "src/ccremap.s"
+      "src/ccremap.s",
+      "src/store.c"
     ],
     "defsym": {},
     "cflags": [],
     "weak": [],
-    "subscribe": [],
+    "subscribe": [
+      {
+        "event": "ev_tick",
+        "fn": "ccm_tick",
+        "order": 50
+      }
+    ],
     "contribute": [],
     "collections": {},
     "copied": [],

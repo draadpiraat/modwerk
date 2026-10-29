@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "machine": "digitakt",
   "moduleId": "cc-remap",
-  "moduleVersion": "0.1.0-experimental",
+  "moduleVersion": "0.2.0-experimental",
   "capturedAt": "2026-10-29",
   "firmware": "1.54",
-  "imageSha256": "eaa72c8cc9dfdfd52271b1bdff76aba15d836c591af7f309e39e0a7995c85079",
+  "imageSha256": "39fc8d4be52e9eeb4fbbe05985345e30736a2e904f7a477a9e62ffc1521d203c",
   "stockSha256": "f78ba80fa7b1da5fb0e1ff61ad61e9e71aafe79f4364fc49679f3651353e3cf6",
   "source": {
     "repository": "https://github.com/repeat98/modwerk",
-    "revision": "uncommitted working tree, branch cc-remap",
+    "revision": "uncommitted working tree, branch cc-remap-0.2.0",
     "path": "sdk/digitakt/modules/cc-remap"
   },
   "kit": {
@@ -17,10 +17,10 @@
     "lockSha256": "b8b330328071092fe6e64fab5f55ddc25dd027e41ac8c9f0584dab95814a8e85"
   },
   "catalog": {
-    "revision": "b88bd114ebe271f93c8b140976a29b1c90a47eba",
-    "sha256": "ec41ff86a2be5ef0227612c759fbb73d3265a77fcfd83cf3e6f6e9af5e282a9f",
+    "revision": "cc56ac7adb26ddaa38ca2ee927dbe8e16f48d5da",
+    "sha256": "b20389542f80fc12917ac01d76ca2fcd1bfdd8e3fa1c35ed3b80ba2a1aaee8e9",
     "cores": 8,
-    "mods": 43
+    "mods": 47
   },
   "build": {
     "modules": [
@@ -31,7 +31,7 @@
       },
       {
         "id": "cc-remap",
-        "version": "0.1.0-experimental",
+        "version": "0.2.0-experimental",
         "sha256": null
       }
     ],
@@ -86,123 +86,123 @@
       "release 2"
     ],
     [
-      1614.24,
+      3114.284,
       "press 22"
     ],
     [
-      1714.243,
+      3214.287,
       "release 22"
     ],
     [
-      2014.252,
+      4114.313,
       "press 22"
     ],
     [
-      2114.255,
+      4214.316,
       "release 22"
     ],
     [
-      2414.264,
+      4514.325,
       "turn 1 -4"
     ],
     [
-      2460.0,
+      4560.0,
       "turn 1 -4"
     ],
     [
-      2500.0,
+      4600.0,
       "turn 1 -4"
     ],
     [
-      2540.0,
+      4640.0,
       "turn 1 -4"
     ],
     [
-      2580.001,
+      4680.0,
       "turn 1 -4"
     ],
     [
-      2627.215,
+      4720.001,
       "turn 1 -4"
     ],
     [
-      2680.0,
+      4760.001,
       "turn 1 -4"
     ],
     [
-      2720.0,
+      4800.001,
       "turn 1 -4"
     ],
     [
-      2760.0,
+      4847.668,
       "turn 1 -4"
     ],
     [
-      2800.0,
+      4893.89,
       "turn 1 -4"
     ],
     [
-      2847.61,
+      4940.0,
       "turn 1 -4"
     ],
     [
-      2893.882,
+      4980.0,
       "turn 1 -4"
     ],
     [
-      2940.0,
+      5020.0,
       "turn 1 -4"
     ],
     [
-      2980.0,
+      5060.557,
       "turn 1 -4"
     ],
     [
-      3020.0,
+      5114.342,
       "turn 1 -4"
     ],
     [
-      3060.001,
+      5160.0,
       "turn 1 -4"
     ],
     [
-      3100.001,
+      5200.0,
       "turn 1 -4"
     ],
     [
-      3147.618,
+      5240.0,
       "turn 1 -4"
     ],
     [
-      3193.884,
+      5281.014,
       "turn 1 -4"
     ],
     [
-      3240.001,
+      5327.225,
       "turn 1 -4"
     ]
   ],
   "captures": [
     {
       "path": "media/cc-select.png",
-      "sha256": "3f7330815bfad426cca0386544c35389622a4f91c3e95fe09e3e64d2a2f4c235",
-      "atMs": 2014.2517094017094,
-      "requestedAtMs": 2014.2517094017094,
-      "plan": "wait 1000\npress TRK\ntap 9\nrelease TRK\ntap AMP\nsnap cc-select\ntap AMP\nsnap cc-receive\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nwait 400\nsnap cc-receive-set\n"
+      "sha256": "bff21551a411d5db28c6ca199eda2a2b755a3f51d8b9de44fbd1ce41a5e8d393",
+      "atMs": 4114.3134615384615,
+      "requestedAtMs": 4114.3134615384615,
+      "plan": "wait 1000\npress TRK\ntap 9\nrelease TRK\nwait 1500\ntap AMP\nwait 600\nsnap cc-select\ntap AMP\nsnap cc-receive\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nwait 400\nsnap cc-receive-set\n"
     },
     {
       "path": "media/cc-receive.png",
       "sha256": "a463d42df9dc0bde4bbf8b05bb6844100eaa6338b1c5261fc1595cc16e45fdb5",
-      "atMs": 2248.030128205128,
-      "requestedAtMs": 2414.263675213675,
-      "plan": "wait 1000\npress TRK\ntap 9\nrelease TRK\ntap AMP\nsnap cc-select\ntap AMP\nsnap cc-receive\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nwait 400\nsnap cc-receive-set\n"
+      "atMs": 4347.652991452991,
+      "requestedAtMs": 4514.325,
+      "plan": "wait 1000\npress TRK\ntap 9\nrelease TRK\nwait 1500\ntap AMP\nwait 600\nsnap cc-select\ntap AMP\nsnap cc-receive\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nwait 400\nsnap cc-receive-set\n"
     },
     {
       "path": "media/cc-receive-set.png",
       "sha256": "0bf65764ccc50b4bc072839c80658f0cb83a5295e96db7b92900cebedb901c01",
-      "atMs": 3447.6267094017094,
-      "requestedAtMs": 3680.9673076923077,
-      "plan": "wait 1000\npress TRK\ntap 9\nrelease TRK\ntap AMP\nsnap cc-select\ntap AMP\nsnap cc-receive\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nwait 400\nsnap cc-receive-set\n"
+      "atMs": 5781.027991452991,
+      "requestedAtMs": 5781.027991452991,
+      "plan": "wait 1000\npress TRK\ntap 9\nrelease TRK\nwait 1500\ntap AMP\nwait 600\nsnap cc-select\ntap AMP\nsnap cc-receive\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nturn A -1 40\nwait 400\nsnap cc-receive-set\n"
     }
   ]
 }

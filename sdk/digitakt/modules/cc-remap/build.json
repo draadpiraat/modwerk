@@ -1,12 +1,19 @@
 {
   "schemaVersion": 1,
   "sources": [
-    "src/ccremap.s"
+    "src/ccremap.s",
+    "src/store.c"
   ],
   "defsym": {},
   "cflags": [],
   "weak": [],
-  "subscribe": [],
+  "subscribe": [
+    {
+      "event": "ev_tick",
+      "fn": "ccm_tick",
+      "order": 50
+    }
+  ],
   "contribute": [],
   "collections": {},
   "copied": [],

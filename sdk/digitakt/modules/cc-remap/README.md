@@ -8,14 +8,16 @@ CC Remap gives each MIDI track a table of eight receive numbers, one per CC VAL 
 
 Every slot starts at its stock number (VAL1 70 … VAL8 77), so an untouched table is the stock behaviour.
 
-Version **0.1.0-experimental** for Digitakt I OS **1.54** on Core 2.1.
+The tables are one set for the whole unit, kept on the +Drive: they come back after a power cycle, whatever project you load.
+
+Version **0.2.0-experimental** for Digitakt I OS **1.54** on Core 2.1.
 
 ## Controls
 
 | Control | Action |
 | --- | --- |
 | AMP, on a MIDI track’s AMP page | Switches between CC Select (1/2), stock, and CC Receive (2/2). The Digitakt shows the page numbers itself. |
-| Knobs A–H on CC Receive (2/2) | Set the CC number (0–127) that moves VAL1–VAL8 of this track, shown with the CC’s name like CC SELECT. The table is shared by all patterns. |
+| Knobs A–H on CC Receive (2/2) | Set the CC number (0–127) that moves VAL1–VAL8 of this track, shown with the CC’s name like CC SELECT. The table is shared by all patterns and projects, and saved to the +Drive about a second after the last change. |
 | Knobs A–H on CC Select (1/2) | Stock CC SELECT. |
 | MIDI CONFIG > CHANNELS > TRACK A–H CHANNEL | Stock: the channel each MIDI track listens on, and so the channel the controller must send on. |
 | MIDI CONFIG > PORTS > RECEIVE CC/NRPN | Stock: with it off, no CC reaches the tracks, remapped or not. |
@@ -53,14 +55,14 @@ MIDI track > AMP page > press AMP again
 
 Requires Core 2.1. Built for OS 1.54 only.
 
-- **Not saved.** The tables start at 70–77 (stock) at every power-on; projects and patterns store nothing for them.
+- **Saved on the +Drive, for the whole unit.** About a second after the last change on CC Receive the eight tables (64 bytes) are written to `/cfw/ccremap.a` or `/cfw/ccremap.b`, in turn, and loaded again a moment after power-on, once the +Drive is mounted. A save cut off by power loss leaves the other file whole, and the newer valid one is loaded. Projects and patterns store nothing for them. With no valid file (a new or formatted +Drive, or deleting both files) the tables are 70–77 again. Turning a knob in the first moments after power-on, before the file is read, keeps your change.
 - **One table per MIDI track, for all patterns.** It does not change with the pattern, unlike CC SELECT, and copying a MIDI track does not copy it.
 - **The track’s own channel only.** A CC on the auto channel reaches the active track as stock, without the table.
 - **Consumed numbers.** A CC whose number is in a track’s table no longer reaches that track as itself; MIDI THRU and other tracks are unaffected.
 - **Two slots with the same number.** The first slot wins.
 - **The popup while turning** still reads "CC1 Select=…": it shows the receive number on CC Receive.
-- **What it patches.** Four 6-byte `jsr` sites on OS 1.54: the entry of the per-track incoming-CC handler (0x400d6c80), which renames a remapped CC; the parameter read (0x4000fe10) and write (0x40010b62) a page uses, which use the table for SEL1–8 while CC Receive is on screen; and the title copy of the parameter pages (0x40030954), which shows the CC Receive title and, the first time the AMP page opens, gives that page its second sub-page. They overlap no other Modwerk module’s bytes. CC Assignment Names replaces the page key handler; CC Remap leaves it alone and uses the stock sub-page stepping.
-- **Stock flows.** It takes `ui:MIDI track AMP page:AMP twice` and changes no saved data. With every slot at 70–77 the MIDI input is stock.
+- **What it patches.** Four 6-byte `jsr` sites on OS 1.54: the entry of the per-track incoming-CC handler (0x400d6c80), which renames a remapped CC; the parameter read (0x4000fe10) and write (0x40010b62) a page uses, which use the table for SEL1–8 while CC Receive is on screen; and the title copy of the parameter pages (0x40030954), which shows the CC Receive title and, the first time the AMP page opens, gives that page its second sub-page. It also runs on the 30 Hz UI tick (`ev_tick`) to load and save the tables. They overlap no other Modwerk module’s bytes. CC Assignment Names replaces the page key handler; CC Remap leaves it alone and uses the stock sub-page stepping.
+- **Stock flows.** It takes `ui:MIDI track AMP page:AMP twice` and changes no stock saved data; it writes only its own two files under `/cfw/` on the +Drive. With every slot at 70–77 the MIDI input is stock.
 
 ## Tests and measurements
 

@@ -1,5 +1,15 @@
 [
   {
+    "version": "0.2.0-experimental",
+    "date": "2026-10-29",
+    "changes": [
+      "The CC Receive tables are now saved on the +Drive, one set for the whole unit, and come back after a power cycle.",
+      "They are written about a second after your last change, to two files in turn, so a power cut during a save keeps the previous tables.",
+      "A new or formatted +Drive starts at the stock 70–77, as before.",
+      "Known issue: not yet tested on a unit."
+    ]
+  },
+  {
     "version": "0.1.0-experimental",
     "date": "2026-10-29",
     "changes": [
