@@ -3,7 +3,7 @@
  "id": "cc-remap",
  "version": "0.1.0-experimental",
  "title": "CC Remap",
- "description": "Choose which incoming CC moves each of a MIDI track's eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
+ "description": "Choose which incoming CC moves each of a MIDI track’s eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
  "category": "midi-usb",
  "author": "draadpiraat",
  "license": "GPL-3.0-or-later",
