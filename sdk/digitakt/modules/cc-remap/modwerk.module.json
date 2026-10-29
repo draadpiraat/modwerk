@@ -18,19 +18,19 @@
   "presentation": {
     "label": "CC RECEIVE",
     "family": "MIDI",
-    "summary": "Choose which incoming CC moves each of a MIDI track's eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
-    "overview": "Stock, a MIDI track's CC VAL knobs follow incoming CC 70–77 on that track's own channel (MIDI CONFIG > CHANNELS > TRACK A–H CHANNEL). CC Remap adds a second layer to the track's AMP page: press AMP again for CC Receive (2/2), where knobs A–H set the incoming CC number for VAL1–VAL8. A CC on the track's channel whose number is in that table moves the VAL slot exactly as CC 70–77 does stock: the value shows on the CC VALUE page and the slot's CC SELECT number goes out of MIDI OUT. Every slot starts at its stock number, so an untouched table is stock. The table is per MIDI track, shared by all patterns, and resets at power-on.",
+    "summary": "Choose which incoming CC moves each of a MIDI track’s eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
+    "overview": "Stock, a MIDI track’s CC VAL knobs follow incoming CC 70–77 on that track’s own channel (MIDI CONFIG > CHANNELS > TRACK A–H CHANNEL). CC Remap adds a second layer to the track’s AMP page: press AMP again for CC Receive (2/2), where knobs A–H set the incoming CC number for VAL1–VAL8. A CC on the track’s channel whose number is in that table moves the VAL slot exactly as CC 70–77 does stock: the value shows on the CC VALUE page and the slot’s CC SELECT number goes out of MIDI OUT. Every slot starts at its stock number, so an untouched table is stock. The table is per MIDI track, shared by all patterns, and resets at power-on.",
     "highlights": [
-      "Play a MIDI track's VAL knobs from a controller whose CC numbers can't be changed.",
-      "Set it up on the AMP page: press AMP again for CC Receive, as on Elektron's own two-layer pages.",
+      "Play a MIDI track’s VAL knobs from a controller whose CC numbers can’t be changed.",
+      "Set it up on the AMP page: press AMP again for CC Receive, as on Elektron’s own two-layer pages.",
       "The track turns each knob into the CC its CC SELECT names, so the controller can drive any synth, or the effects through FX Track.",
       "Every slot starts at the stock 70–77; untouched, MIDI input is stock."
     ],
     "usage": [
-      "Set the controller to send on MIDI track A's receive channel, 9 by default (SETTINGS > MIDI CONFIG > CHANNELS > TRACK A CHANNEL), and connect it to MIDI IN.",
+      "Set the controller to send on MIDI track A’s receive channel, 9 by default (SETTINGS > MIDI CONFIG > CHANNELS > TRACK A CHANNEL), and connect it to MIDI IN.",
       "Select MIDI track A (TRK + trig 9), switch CHAN on (SRC page, FUNC + knob A) and set the CC SELECT numbers your synth expects on the AMP page.",
-      "Press AMP again for CC Receive (2/2). Turn knob A to the number the controller's first knob sends (CC 8, say), knob B to the second, and so on.",
-      "Turn the controller's first knob: VAL1 follows on the FLTR page and the synth receives VAL1's CC SELECT number."
+      "Press AMP again for CC Receive (2/2). Turn knob A to the number the controller’s first knob sends (CC 8, say), knob B to the second, and so on.",
+      "Turn the controller’s first knob: VAL1 follows on the FLTR page and the synth receives VAL1’s CC SELECT number."
     ]
   },
   "access": {
@@ -50,11 +50,11 @@
     {
       "name": "CC Receive (2/2), knobs A–H",
       "default": null,
-      "doc": "Default: VAL1 70 … VAL8 77 (stock). The incoming CC number (0–127) that moves VAL1–VAL8 of this MIDI track, on its TRACK CHANNEL. A CC in the table reaches the stock code as that slot's 70–77; other CCs are stock. One table per MIDI track for all patterns; 70–77 again at every power-on; not saved.",
+      "doc": "Default: VAL1 70 … VAL8 77 (stock). The incoming CC number (0–127) that moves VAL1–VAL8 of this MIDI track, on its TRACK CHANNEL. A CC in the table reaches the stock code as that slot’s 70–77; other CCs are stock. One table per MIDI track for all patterns; 70–77 again at every power-on; not saved.",
       "labels": null
     },
     {
-      "name": "AMP on a MIDI track's AMP page",
+      "name": "AMP on a MIDI track’s AMP page",
       "default": null,
       "doc": "Switches between CC Select (1/2), stock, and CC Receive (2/2).",
       "labels": null
@@ -70,8 +70,8 @@
       "Built for OS 1.54 only.",
       "Not saved: the tables are 70–77 (stock) again at every power-on.",
       "One table per MIDI track for all patterns, unlike CC SELECT.",
-      "Only the track's own TRACK CHANNEL is remapped; a CC on the auto channel is stock.",
-      "A CC whose number is in a track's table no longer reaches that track as itself; two slots with the same number: the first wins.",
+      "Only the track’s own TRACK CHANNEL is remapped; a CC on the auto channel is stock.",
+      "A CC whose number is in a track’s table no longer reaches that track as itself; two slots with the same number: the first wins.",
       "The value popup while turning still reads CC1 Select=… on CC Receive."
     ]
   },
@@ -106,15 +106,15 @@
   },
   "tests": {
     "report": "TESTING.md",
-    "summary": "Emulator: on a MIDI track's AMP page, AMP switches to CC Receive (2/2) and back; knobs A–H edit the table. With VAL1 set to receive CC 7 and VAL2 CC 1, those CCs on track A's channel set VAL1 and VAL2 and send their CC SELECT numbers out of MIDI OUT; CC 70 still sets VAL1; other channels are unaffected. With FX Track, a remapped CC sets the reverb PRE and nothing leaves MIDI OUT. Next to CC Assignment Names the layer and the name editor both work. Hardware not yet tested.",
+    "summary": "Emulator: on a MIDI track’s AMP page, AMP switches to CC Receive (2/2) and back; knobs A–H edit the table. With VAL1 set to receive CC 7 and VAL2 CC 1, those CCs on track A’s channel set VAL1 and VAL2 and send their CC SELECT numbers out of MIDI OUT; CC 70 still sets VAL1; other channels are unaffected. With FX Track, a remapped CC sets the reverb PRE and nothing leaves MIDI OUT. Next to CC Assignment Names the layer and the name editor both work. Hardware not yet tested.",
     "documentation": {
       "tutorial": {
-        "title": "Quick tutorial: play a MIDI track's VAL knobs from a fixed-CC controller",
+        "title": "Quick tutorial: play a MIDI track’s VAL knobs from a fixed-CC controller",
         "steps": [
-          "Set the controller to send on MIDI track A's receive channel, 9 by default (SETTINGS > MIDI CONFIG > CHANNELS > TRACK A CHANNEL), and connect it to MIDI IN.",
+          "Set the controller to send on MIDI track A’s receive channel, 9 by default (SETTINGS > MIDI CONFIG > CHANNELS > TRACK A CHANNEL), and connect it to MIDI IN.",
           "Select MIDI track A (TRK + trig 9), switch CHAN on (SRC page, FUNC + knob A) and set the CC SELECT numbers your synth expects on the AMP page.",
-          "Press AMP again for CC Receive (2/2). Turn knob A to the number the controller's first knob sends (CC 8, say), knob B to the second, and so on.",
-          "Turn the controller's first knob: VAL1 follows on the FLTR page and the synth receives VAL1's CC SELECT number."
+          "Press AMP again for CC Receive (2/2). Turn knob A to the number the controller’s first knob sends (CC 8, say), knob B to the second, and so on.",
+          "Turn the controller’s first knob: VAL1 follows on the FLTR page and the synth receives VAL1’s CC SELECT number."
         ]
       },
       "screenshots": [
