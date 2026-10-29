@@ -7,7 +7,7 @@
   "mods": [
     {
       "file": "cc-remap-0.1.0-experimental-os1.54.elemod",
-      "sha256": "a9a3da595f54a3823bc4416f07741f905cd5944684ed2180a0740ac4d871a307",
+      "sha256": "81d9fd8d105214ee0bb1daf95da8fb004900ae0b109be07ca2c26a459f2f81f1",
       "id": "cc-remap",
       "version": "0.1.0-experimental",
       "device": "digitakt-mk1",
@@ -15,7 +15,7 @@
       "license": "GPL-3.0-or-later",
       "source": {
         "repo": "repeat98/modwerk",
-        "commit": "e74e71b102405ff823cda59fb983022f7f3a5974",
+        "commit": "143f366da5099a3a2a9124870430d8ba4fe01fba",
         "path": "sdk/imports/packages/cc-remap/cc-remap-0.1.0-experimental-os1.54.elemod"
       },
       "title": "CC Remap",
@@ -23,8 +23,8 @@
         "core"
       ],
       "conflicts": [],
-      "summary": "Choose which incoming CC moves each of a MIDI track's eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
-      "description": "Press AMP again on a MIDI track's AMP page for CC Receive, where knobs A–H set the incoming CC for VAL1–VAL8 on the track's own channel. Every slot starts at the stock 70–77.",
+      "summary": "Choose which incoming CC moves each of a MIDI track’s eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
+      "description": "Press AMP again on a MIDI track’s AMP page for CC Receive, where knobs A–H set the incoming CC for VAL1–VAL8 on the track’s own channel. Every slot starts at the stock 70–77.",
       "category": "MIDI",
       "author": "draadpiraat",
       "needs_core": "2.1",
