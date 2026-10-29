@@ -90,6 +90,8 @@ Builds: module alone `39fc8d4b…1d203c`, with FX Track `0ed88902…6b4500`, wit
 6. Look at the +Drive (Transfer or the Digitakt’s file browser, if it lists `/cfw`): `ccremap.a` and `ccremap.b`, 112 bytes each.
 7. With FX Track and with CC Assignment Names: steps 1–2 work in those builds too.
 
+**Author’s results so far (draadpiraat, 29 October 2026):** “settings survive a powercycle now” (step 2). The other steps not reported yet.
+
 ## 6. 0.1.0 on hardware (the author)
 
 Builds: module alone `eaa72c8c…c85079`, with FX Track `5196ccac…dd5c74`, with CC Assignment Names `024ff31b…66edcc`.
