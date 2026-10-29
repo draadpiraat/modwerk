@@ -1,0 +1,686 @@
+{
+ "elemod": 2,
+ "id": "cc-remap",
+ "version": "0.2.0-experimental",
+ "title": "CC Remap",
+ "description": "Choose which incoming CC moves each of a MIDI track’s eight CC VAL knobs, so a controller with fixed CC numbers can play them.",
+ "category": "midi-usb",
+ "author": "draadpiraat",
+ "license": "GPL-3.0-or-later",
+ "target": {
+  "device": "digitakt-mk1",
+  "product": "Digitakt mk1",
+  "os": "1.54",
+  "syx_sha256": "f78ba80fa7b1da5fb0e1ff61ad61e9e71aafe79f4364fc49679f3651353e3cf6",
+  "section3_sha256": "5c58bf9e3949ef09977c5fc007a61e8d026931f67f1621238379dfb8ee4d31a2",
+  "section3_len": 2479680
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 1343,
+   "parts": [
+    [
+     "hex",
+     "202f000851807208b081642ae78841f900000000d1c0222f000c7000b218670c52800c800000000866f2600a0680000000462f40000c4aaf001856c04e7593c9203900000000674622402029002c673c7001b0a90090663422020481000000217008b28064262039421c914406800000059a43f900000000d3c17208b1c0670e0680000000705089538166f093c94e7561ac2009670870001011e188600471702a0054974e756196200967222004e080128093fc00000000d3fc0000000070011280701e23c000000000b0804e7531842a004a054e7520120c80401838146600008e202f00080c804197e2a466000080206a007c202a008090887204b081663e487800084eb9400d412c588f4a806700005e226a007c204022112081214100042f092548007c508025400080254000844eb9400d4332588f23ca00000000b5f900000000660000287001b0aa00906600001e4879000000004879000000002f2f000c4eb94017af204fef000c4e754ef94017a6164fefffec2f0e2f02486f000c4879000000002f2f00284eb9400cf3a04fef000c2c404a80664e486f000c487800604879000000004eb9400cf0e6486f001824004eb9400cf35e4fef0010704fb0826c18243c43435231b4b900000000660a7040b0b900000000671a241f200e2c5f4fef00144e75241f9dce200e2c5f4fef00144e75243900000000223c5eed123443f90000000020492f4200082001741beb88e4a97598d0812202b181b1fc0000000066e8b2af000866b052894a29ffff6da8b3fc0000000066f03c7c0001241f200e2c5f4fef00144e754e56ffd022390000000048d70c042d41ffdc4a81670001764ab9000000006712203900000000538023c0000000004a80670a4cee0c04ffd04e5e4e754ab9420eec50670001f2207c426866904a90660001e62f082439000000004eb94000188442a742a742a7486effec4879000000004eb9400d0ccc2f3c426866902d40ffe04eb9400019b64fef001c7219b2aeffe0670001b641f90000000052822d42ffe443f9000000002d48ffe8246effe852aeffe814d9b3fc0000000066ee724023c100000000267c43435231222effe4203c5eed123442b90000000042b90000000042b90000000042b90000000023cb0000000023c10000000043f9000000002400721be2aaeb887398d082b380b1c966ee240e0682fffffff02f0248790000000023c0000000007001c0aeffe441f9000000002f300c004eb9400cf3a04fef000c4a80660001182f02487800604879000000004eb9400cf1462f022d40ffe84eb9400cf35e4fef00107060b0aeffe8660000ec4cee0c04ffd0222effe452b90000000023c1000000004e5e4e754ab9420eec506700fe9e4ab9426866906600fe944879000000004ebafd802479000000004879000000002d4affe82d40ffe44ebafd68508f4aaeffe4671a4a80670a203900000000b08a62164879000000004ebafd48588f4a80673c20390000000023c000000000203c0000000041f90000000043f900000000246effdc4a30a800660847f1a8001593080052aeffdc7240b2aeffdc66e24cee0c04ffd0700123c0000000004e5e4e754cee0c04ffd0700123c0000000004e5e4e754879000000004eb9400ce034588f4a806700fe3a4cee0c04ffd0307c012c52b90000000023c8000000004e5e4e750000464748494a4b4c4d464748494a4b4c4d464748494a4b4c4d464748494a4b4c4d464748494a4b4c4d464748494a4b4c4d464748494a4b4c4d464748494a4b4c4d434320526563656976650000000000000000000072002f6366772f636372656d61702e62002f6366772f636372656d61702e61002f636677007700"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 188
+  }
+ },
+ "symbols": {
+  "ALLOC": [
+   "abs",
+   1074610476
+  ],
+  "FREE": [
+   "abs",
+   1074610994
+  ],
+  "STR_CTOR": [
+   "abs",
+   1075293984
+  ],
+  "STR_COPY": [
+   "abs",
+   1075291670
+  ],
+  "PATTERN": [
+   "abs",
+   1109168452
+  ],
+  "MIDI_OFF": [
+   "abs",
+   1434
+  ],
+  "MIDI_SIZE": [
+   "abs",
+   112
+  ],
+  "PAGE_VT": [
+   "abs",
+   1075329044
+  ],
+  "SEL_TITLE": [
+   "abs",
+   1100472996
+  ],
+  "V_SHOWN": [
+   "abs",
+   44
+  ],
+  "V_PAGES": [
+   "abs",
+   124
+  ],
+  "V_SUB": [
+   "abs",
+   144
+  ],
+  "SEL1": [
+   "abs",
+   33
+  ],
+  "VAL1_CC": [
+   "abs",
+   70
+  ],
+  "SAVE_DELAY": [
+   "abs",
+   30
+  ],
+  "ccm_slot": [
+   ".run",
+   62
+  ],
+  "ccm_view": [
+   ".bss",
+   68
+  ],
+  "ccm_alloc": [
+   ".bss",
+   72
+  ],
+  "ccm_name": [
+   ".run",
+   1284
+  ],
+  "img_read": [
+   ".run",
+   372
+  ],
+  "ccm_img": [
+   ".bss",
+   92
+  ],
+  "ccm_loaded": [
+   ".bss",
+   84
+  ],
+  "ccm_seq": [
+   ".bss",
+   88
+  ],
+  "ccm_path": [
+   ".run",
+   1296
+  ],
+  "ccm_set": [
+   ".run",
+   166
+  ],
+  "ccm_dirty": [
+   ".bss",
+   0
+  ],
+  "ccm_title": [
+   ".run",
+   214
+  ],
+  "ccm_saves": [
+   ".bss",
+   80
+  ],
+  "ccm_save_fail": [
+   ".bss",
+   76
+  ],
+  "ccm_rx": [
+   ".run",
+   1220
+  ],
+  "ccm_get": [
+   ".run",
+   144
+  ],
+  "ccm_edited": [
+   ".bss",
+   4
+  ],
+  "ccm_tick": [
+   ".run",
+   588
+  ],
+  "ccm_in": [
+   ".run",
+   0
+  ]
+ },
+ "exports": [
+  "ccm_dirty",
+  "ccm_edited",
+  "ccm_get",
+  "ccm_in",
+  "ccm_rx",
+  "ccm_save_fail",
+  "ccm_saves",
+  "ccm_set",
+  "ccm_tick",
+  "ccm_title"
+ ],
+ "imports": [],
+ "weak": [],
+ "relocs": [
+  [
+   ".run",
+   16,
+   "abs32",
+   "sec:.run",
+   1220
+  ],
+  [
+   ".run",
+   66,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   116,
+   "abs32",
+   "sec:.run",
+   1220
+  ],
+  [
+   ".run",
+   180,
+   "abs32",
+   "sec:.run",
+   1220
+  ],
+  [
+   ".run",
+   186,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   198,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   314,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   320,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   340,
+   "abs32",
+   "sec:.bss",
+   72
+  ],
+  [
+   ".run",
+   346,
+   "abs32",
+   "sec:.run",
+   1284
+  ],
+  [
+   ".run",
+   386,
+   "abs32",
+   "sec:.run",
+   1304
+  ],
+  [
+   ".run",
+   420,
+   "abs32",
+   "sec:.bss",
+   92
+  ],
+  [
+   ".run",
+   460,
+   "abs32",
+   "sec:.bss",
+   92
+  ],
+  [
+   ".run",
+   470,
+   "abs32",
+   "sec:.bss",
+   96
+  ],
+  [
+   ".run",
+   504,
+   "abs32",
+   "sec:.bss",
+   104
+  ],
+  [
+   ".run",
+   516,
+   "abs32",
+   "sec:.bss",
+   108
+  ],
+  [
+   ".run",
+   544,
+   "abs32",
+   "sec:.bss",
+   172
+  ],
+  [
+   ".run",
+   566,
+   "abs32",
+   "sec:.bss",
+   172
+  ],
+  [
+   ".run",
+   594,
+   "abs32",
+   "sec:.bss",
+   84
+  ],
+  [
+   ".run",
+   614,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   622,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   630,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   674,
+   "abs32",
+   "sec:.bss",
+   88
+  ],
+  [
+   ".run",
+   696,
+   "abs32",
+   "sec:.run",
+   1336
+  ],
+  [
+   ".run",
+   738,
+   "abs32",
+   "sec:.bss",
+   108
+  ],
+  [
+   ".run",
+   750,
+   "abs32",
+   "sec:.run",
+   1220
+  ],
+  [
+   ".run",
+   770,
+   "abs32",
+   "sec:.run",
+   1284
+  ],
+  [
+   ".run",
+   780,
+   "abs32",
+   "sec:.bss",
+   96
+  ],
+  [
+   ".run",
+   802,
+   "abs32",
+   "sec:.bss",
+   172
+  ],
+  [
+   ".run",
+   808,
+   "abs32",
+   "sec:.bss",
+   176
+  ],
+  [
+   ".run",
+   814,
+   "abs32",
+   "sec:.bss",
+   180
+  ],
+  [
+   ".run",
+   820,
+   "abs32",
+   "sec:.bss",
+   184
+  ],
+  [
+   ".run",
+   826,
+   "abs32",
+   "sec:.bss",
+   92
+  ],
+  [
+   ".run",
+   832,
+   "abs32",
+   "sec:.bss",
+   100
+  ],
+  [
+   ".run",
+   838,
+   "abs32",
+   "sec:.bss",
+   172
+  ],
+  [
+   ".run",
+   872,
+   "abs32",
+   "sec:.run",
+   1341
+  ],
+  [
+   ".run",
+   878,
+   "abs32",
+   "sec:.bss",
+   104
+  ],
+  [
+   ".run",
+   890,
+   "abs32",
+   "sec:.run",
+   1296
+  ],
+  [
+   ".run",
+   922,
+   "abs32",
+   "sec:.bss",
+   92
+  ],
+  [
+   ".run",
+   970,
+   "abs32",
+   "sec:.bss",
+   80
+  ],
+  [
+   ".run",
+   976,
+   "abs32",
+   "sec:.bss",
+   88
+  ],
+  [
+   ".run",
+   1006,
+   "abs32",
+   "sec:.run",
+   1306
+  ],
+  [
+   ".run",
+   1016,
+   "abs32",
+   "sec:.bss",
+   100
+  ],
+  [
+   ".run",
+   1022,
+   "abs32",
+   "sec:.run",
+   1321
+  ],
+  [
+   ".run",
+   1052,
+   "abs32",
+   "sec:.bss",
+   100
+  ],
+  [
+   ".run",
+   1062,
+   "abs32",
+   "sec:.run",
+   1306
+  ],
+  [
+   ".run",
+   1078,
+   "abs32",
+   "sec:.bss",
+   100
+  ],
+  [
+   ".run",
+   1084,
+   "abs32",
+   "sec:.bss",
+   88
+  ],
+  [
+   ".run",
+   1090,
+   "abs32",
+   "sec:.run",
+   1220
+  ],
+  [
+   ".run",
+   1096,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   1102,
+   "abs32",
+   "sec:.bss",
+   108
+  ],
+  [
+   ".run",
+   1146,
+   "abs32",
+   "sec:.bss",
+   84
+  ],
+  [
+   ".run",
+   1164,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   1174,
+   "abs32",
+   "sec:.run",
+   1336
+  ],
+  [
+   ".run",
+   1204,
+   "abs32",
+   "sec:.bss",
+   76
+  ],
+  [
+   ".run",
+   1210,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   1296,
+   "abs32",
+   "sec:.run",
+   1306
+  ],
+  [
+   ".run",
+   1300,
+   "abs32",
+   "sec:.run",
+   1321
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x400d6c80",
+   "len": 6,
+   "stock_sha256": "11b4def320d70497bb70f95c897c82e74a3f9cb4d2062c945379c08c4082bee8",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:ccm_in",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4000fe10",
+   "len": 6,
+   "stock_sha256": "87b2accab0f8cd8665cf40ee70dc99667b8f4ae9b78f3bc9ad93d76bf3f54b48",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:ccm_get",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40010b62",
+   "len": 6,
+   "stock_sha256": "44e1500d9e87ab0fb7f797ef1c955f2a695119712d5dabbc5e4b83dbf79b7d34",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:ccm_set",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40030954",
+   "len": 6,
+   "stock_sha256": "77abc4ef57c949bbe0aad77b60f0e69e822564e11653bbd83175e8d54337780f",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:ccm_title",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [
+  {
+   "to": "ev_tick",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:ccm_tick",
+     0
+    ]
+   ],
+   "claims": []
+  }
+ ],
+ "copied": [],
+ "resources": {
+  "regions": [],
+  "names": [
+   "ui:MIDI track AMP page:AMP twice"
+  ],
+  "core": "2.1"
+ },
+ "requires": [
+  "core"
+ ],
+ "conflicts": [],
+ "signature": null
+}
