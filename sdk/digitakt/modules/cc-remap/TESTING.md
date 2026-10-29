@@ -4,7 +4,7 @@ Module version 0.2.0-experimental, Digitakt I OS 1.54 (stock file SHA-256 `f78ba
 
 ## Evidence tier
 
-0.2.0: emulator only so far; the hardware steps are in section 5. The layer and the remap are unchanged from 0.1.0, which the author tested on a Digitakt I with an Allen & Heath Xone:1D (section 6).
+0.2.0: author hardware (section 5), alone and with CC Assignment Names, plus the emulator results below. The layer and the remap are unchanged from 0.1.0, which the author tested on a Digitakt I with an Allen & Heath Xone:1D (section 6).
 
 ## How it works (OS 1.54)
 
@@ -90,7 +90,7 @@ Builds: module alone `39fc8d4b…1d203c`, with FX Track `0ed88902…6b4500`, wit
 6. Look at the +Drive (Transfer or the Digitakt’s file browser, if it lists `/cfw`): `ccremap.a` and `ccremap.b`, 112 bytes each.
 7. With FX Track and with CC Assignment Names: steps 1–2 work in those builds too.
 
-**Author’s results so far (draadpiraat, 29 October 2026):** “settings survive a powercycle now” (step 2). The other steps not reported yet.
+**Author’s results (draadpiraat, 29 October 2026, Allen & Heath Xone:1D):** step 2 “settings survive a powercycle now”; steps 3 to 7 “all confirmed”; “tested about 15 minutes on CC Remap 0.2 only and with CC Assignment names” (so step 7 covers the CC Assignment Names build; the FX Track build was not tested). Step 1 and whether the screen hitches during a save were not reported separately. Details in [evidence/hardware-testing.json](evidence/hardware-testing.json).
 
 ## 6. 0.1.0 on hardware (the author)
 
@@ -105,7 +105,7 @@ Builds: module alone `eaa72c8c…c85079`, with FX Track `5196ccac…dd5c74`, wit
 7. With CC Assignment Names: CC Receive still works, and FUNC + hold a knob on CC VALUE still renames.
 8. Power-cycle: CC Receive is back at 70–77.
 
-**Author’s results (draadpiraat, 29 October 2026, Allen & Heath Xone:1D):** 1 works perfect; 2, 3 and 4 confirmed; 5 “different channels work and follow its own channel”; 6 (with FX Track) “fx track seems to work exactly as described”; 7 (with CC Assignment Names) “confirmed everything works”; 8 confirmed each time. Also noticed: copying an entire MIDI track does not copy its CC Receive table. Tested for about 20 minutes. Details in [evidence/hardware-testing.json](evidence/hardware-testing.json).
+**Author’s results (draadpiraat, 29 October 2026, Allen & Heath Xone:1D):** 1 works perfect; 2, 3 and 4 confirmed; 5 “different channels work and follow its own channel”; 6 (with FX Track) “fx track seems to work exactly as described”; 7 (with CC Assignment Names) “confirmed everything works”; 8 confirmed each time. Also noticed: copying an entire MIDI track does not copy its CC Receive table. Tested for about 20 minutes. Details of 0.1.0 under `previousVersion` in [evidence/hardware-testing.json](evidence/hardware-testing.json).
 
 ## Stock flows compared
 
@@ -120,6 +120,6 @@ Builds: module alone `eaa72c8c…c85079`, with FX Track `5196ccac…dd5c74`, wit
 
 ## Still to test
 
-- Everything in section 5 on hardware, above all a power cut during a save.
+- 0.2.0 with FX Track on hardware; a power cut in the middle of a save (step 5 powers off within a second of a change).
 
 - The auto channel (not remapped by design), USB MIDI input, a CC flood.

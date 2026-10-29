@@ -28,7 +28,7 @@
       "category": "MIDI",
       "author": "draadpiraat",
       "needs_core": "2.1",
-      "on_unit": "0.1.0 tested on a Digitakt I by the author; saving to the +Drive (0.2.0) is emulator-tested only."
+      "on_unit": "Tested on a Digitakt I by the author, alone and with CC Assignment Names (0.2.0); 0.1.0 also with FX Track."
     }
   ]
 }

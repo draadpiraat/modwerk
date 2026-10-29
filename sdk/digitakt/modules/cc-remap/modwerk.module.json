@@ -97,19 +97,32 @@
     }
   },
   "evidence": {
-    "tier": "none",
+    "tier": "author-hardware",
     "moduleVersion": "0.2.0-experimental",
     "sourceSha256": "a4bcf3431b3726bd0894db60703f58e1ac9d4b1bd7f7121a57a7eca6be46f96d",
     "reports": [
+      "evidence/hardware-testing.json",
       "evidence/source-identity.json",
       "TESTING.md"
     ],
-    "hardware": null,
+    "hardware": {
+      "model": "Digitakt I",
+      "release": "1.54",
+      "testedOn": "2026-10-29",
+      "tester": "draadpiraat",
+      "durationMinutes": 15,
+      "summary": "draadpiraat tested CC Remap 0.2.0 on their Digitakt I, OS 1.54, with an Allen & Heath Xone:1D, alone and with CC Assignment Names, for about 15 minutes: the CC Receive tables survive a power cycle; two MIDI tracks keep their own tables; the tables stay when another project loads; a change followed by power-off within a second comes back as the old or the new number, never reset or broken; /cfw/ccremap.a and .b are on the +Drive; with CC Assignment Names the same holds. 0.1.0 (the layer and remap) was tested before, also with FX Track.",
+      "limitations": [
+        "The FX Track build of 0.2.0 was not tested on the unit.",
+        "Whether the screen hitches during a save was not reported.",
+        "The auto channel, USB MIDI input and a CC flood were not tested."
+      ]
+    },
     "verifiedBy": null
   },
   "tests": {
     "report": "TESTING.md",
-    "summary": "Emulator (0.2.0): the tables are saved to the +Drive about a second after a change and loaded after a cold boot on that +Drive; two files written in turn, the newer valid one loads, a corrupted newer file falls back to the older one. Layer and remap unchanged from 0.1.0, which the author tested on a Digitakt I with an Allen & Heath Xone:1D, alone, with FX Track and with CC Assignment Names. 0.2.0 not yet tested on a unit.",
+    "summary": "Author hardware (0.2.0, Digitakt I, OS 1.54, Allen & Heath Xone:1D, alone and with CC Assignment Names): the tables survive a power cycle, per track, across project loads and a power-off right after a change. Emulator: save, cold-boot reload, the two files in turn and a corrupted newer file falling back to the older one. 0.1.0 (layer and remap) was tested on the unit alone, with FX Track and with CC Assignment Names.",
     "documentation": {
       "tutorial": {
         "title": "Quick tutorial: play a MIDI track’s VAL knobs from a fixed-CC controller",
